@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width,
+                   initial-scale=1.0,
+                   viewport-fit=cover"
+    >
+
+    <title>Inventario - TESSI</title>
+
+    <link rel="stylesheet" href="stylesde.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     APLICACIÓN
+====================================================== -->
+
+<div class="app">
+
+
+    <!-- =================================================
+         LOGIN
+    ================================================== -->
+
+    <section id="pantalla-login" class="pantalla-login">
+
+        <div class="phone login-phone">
+
+            <div class="screen">
+
+                <div class="screen-content">
+
+                    <h1 class="inventory-title">
+                        INVENTARIO
+                    </h1>
+
+
+                    <div class="brand">
+
+                        <div class="logo">
+                            T
+                        </div>
+
+                        <p class="brand-name">
+                            TESSI
+                        </p>
+
+                    </div>
+
+
+                    <div class="login-container">
+
+                        <h2 class="login-title">
+                            Bienvenido
+                        </h2>
+
+
+                        <form
+                            class="login-form"
+                            id="form-login"
+                        >
+
+                            <input
+                                class="input"
+                                id="input-email"
+                                type="email"
+                                placeholder="Email"
+                                autocomplete="username"
+                                required
+                            >
+
+
+                            <input
+                                class="input"
+                                id="input-password"
+                                type="password"
+                                placeholder="Contraseña"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                class="btn-primary"
+                                type="submit"
+                            >
+                                Iniciar sesión
+                            </button>
+
+                        </form>
+
+
+                        <p
+                            class="login-error"
+                            id="login-error"
+                        ></p>
+
+
+                        <div class="forgot-password">
+
+                            <a
+                                href="#"
+                                id="link-recuperar"
+                            >
+                                ¿Olvidaste tu contraseña?
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         APLICACIÓN PRINCIPAL
+    ================================================== -->
+
+    <section
+        id="pantalla-app"
+        class="pantalla-app oculto"
+    >
+
+
+        <!-- =================================================
+             MENÚ LATERAL PC
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="sidebar-logo">
+                    T
+                </div>
+
+                <div>
+
+                    <h2>
+                        INVENTARIO
+                    </h2>
+
+                    <span>
+                        TESSI
+                    </span>
+
+                </div>
+
+            </div>
+
+
+           <nav class="sidebar-menu">
+
+    <button
+        class="menu-item activo"
+        data-seccion="inicio"
+    >
+        <span>⌂</span>
+        <span>Inicio</span>
+    </button>
+
+    <button
+        class="menu-item"
+        data-seccion="inventario"
+    >
+        <span>▣</span>
+        <span>Inventario</span>
+    </button>
+
+    <button
+        class="menu-item"
+        data-seccion="categorias"
+    >
+        <span>▤</span>
+        <span>Categorías</span>
+    </button>
+
+    <button
+        class="menu-item"
+        data-seccion="usuarios"
+    >
+        <span>♙</span>
+        <span>Usuarios</span>
+    </button>
+    
+<button
+    class="menu-item"
+    data-seccion="agrupables"
+>
+    <span>▣</span>
+    <span>Productos agrupables</span>
+</button>
+
+    <button
+        class="menu-item"
+        data-seccion="historial"
+    >
+        <span>◷</span>
+        <span>Historial</span>
+    </button>
+
+    <button
+        class="menu-item"
+        data-seccion="configuracion"
+    >
+        <span>⚙</span>
+        <span>Configuración</span>
+    </button>
+
+</nav>
+
+            <button
+                class="sidebar-logout"
+                id="btn-cerrar-sesion-pc"
+            >
+                ⇥ Cerrar sesión
+            </button>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             CONTENIDO
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =============================================
+                 INICIO / DASHBOARD
+            ============================================== -->
+
+            <section
+                id="seccion-inicio"
+                class="seccion activa"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-small">
+                            PANEL PRINCIPAL
+                        </p>
+
+                        <h1>
+                            Bienvenido
+                        </h1>
+
+                        <p class="section-description">
+                            Estado general de tu inventario
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ESTADO -->
+
+                <div class="system-status">
+
+                    <div class="status-circle">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            SISTEMA ACTIVO
+                        </strong>
+
+                        <span>
+                            Inventario operativo
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TARJETAS -->
+
+                <div class="dashboard-grid">
+
+
+                    <div class="dashboard-card">
+
+                        <div class="dashboard-icon">
+                            ▣
+                        </div>
+
+                        <div class="dashboard-info">
+
+                            <span>
+                                PRODUCTOS REGISTRADOS
+                            </span>
+
+                            <strong id="dashboard-total">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <div class="dashboard-icon">
+                            ✓
+                        </div>
+
+                        <div class="dashboard-info">
+
+                            <span>
+                                DISPONIBLES
+                            </span>
+
+                            <strong id="dashboard-disponibles">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <div class="dashboard-icon">
+                            !
+                        </div>
+
+                        <div class="dashboard-info">
+
+                            <span>
+                                EN MANTENIMIENTO
+                            </span>
+
+                            <strong id="dashboard-mantenimiento">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-card">
+
+                        <div class="dashboard-icon">
+                            ◉
+                        </div>
+
+                        <div class="dashboard-info">
+
+                            <span>
+                                EN USO
+                            </span>
+
+                            <strong id="dashboard-en-uso">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- ACCIONES -->
+
+                <div class="dashboard-actions">
+
+                    <button
+                        class="dashboard-button"
+                        data-seccion="inventario"
+                    >
+                        Ver inventario
+                    </button>
+
+
+                    <button
+                        class="dashboard-button primary"
+                        id="btn-dashboard-agregar"
+                    >
+                        + Agregar producto
+                    </button>
+
+                </div>
+
+
+                <!-- ÚLTIMOS PRODUCTOS -->
+
+                <div class="recent-section">
+
+                    <div class="section-header-row">
+
+                        <h2>
+                            Últimos productos
+                        </h2>
+
+                        <button
+                            class="text-button"
+                            data-seccion="inventario"
+                        >
+                            Ver todos
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="ultimos-productos"
+                        class="recent-products"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 INVENTARIO
+            ============================================== -->
+
+            <section
+                id="seccion-inventario"
+                class="seccion"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-small">
+                            GESTIÓN
+                        </p>
+
+                        <h1>
+                            Inventario
+                        </h1>
+
+                        <p class="section-description">
+                            Administra los productos registrados
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="header-button"
+                        id="btn-agregar-producto"
+                    >
+                        + Agregar producto
+                    </button>
+
+                </div>
+
+
+                <!-- BUSCADOR -->
+
+                <div class="inventory-tools">
+
+                    <input
+                        type="search"
+                        id="buscar-producto"
+                        class="search-input"
+                        placeholder="Buscar por nombre, serial, marca o código..."
+                    >
+
+
+                    <select
+                        id="filtro-estado"
+                        class="filter-select"
+                    >
+
+                        <option value="">
+                            Todos los estados
+                        </option>
+
+                        <option value="Disponible">
+                            Disponible
+                        </option>
+
+                        <option value="En uso">
+                            En uso
+                        </option>
+
+                        <option value="Mantenimiento">
+                            Mantenimiento
+                        </option>
+
+                        <option value="Dado de baja">
+                            Dado de baja
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- LISTA -->
+
+                <div
+                    id="lista-inventario"
+                    class="inventory-list"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 CATEGORÍAS
+            ============================================== -->
+
+            <section
+                id="seccion-categorias"
+                class="seccion"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-small">
+                            ORGANIZACIÓN
+                        </p>
+
+                        <h1>
+                            Categorías
+                        </h1>
+
+                        <p class="section-description">
+                            Organiza los productos del inventario
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="header-button"
+                        id="btn-nueva-categoria"
+                    >
+                        + Nueva categoría
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="lista-categorias"
+                    class="categories-grid"
+                ></div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 USUARIOS
+            ============================================== -->
+
+            <section
+                id="seccion-usuarios"
+                class="seccion"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-small">
+                            ADMINISTRACIÓN
+                        </p>
+
+                        <h1>
+                            Usuarios
+                        </h1>
+
+                        <p class="section-description">
+                            Usuarios con acceso al sistema
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="header-button"
+                        id="btn-nuevo-usuario"
+                    >
+                        + Nuevo usuario
+                    </button>
+
+                </div>
+
+
+                <div
+    id="lista-usuarios"
+    class="users-list"
+>
+</div>
+
+            </section>
+
+
+            <!-- =============================================
+     PRODUCTOS AGRUPABLES
+============================================== -->
+
+<section
+    id="seccion-agrupables"
+    class="seccion"
+>
+
+    <div class="section-header">
+
+        <div>
+
+            <p class="section-small">
+                INVENTARIO POR CANTIDAD
+            </p>
+
+            <h1>
+                Productos agrupables
+            </h1>
+
+            <p class="section-description">
+                Materiales y elementos administrados por cantidad
+            </p>
+
+        </div>
+
+        <div>
+
+            <button
+                type="button"
+                class="btn-primary"
+                id="btn-agregar-agrupable"
+            >
+                + Agregar producto
+            </button>
+
+        </div>
+
+    </div>
+
+    <div
+        id="lista-agrupables"
+        class="agrupables-grid"
+    >
+
+        <div class="agrupable-vacio">
+            Cargando productos agrupables...
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- =============================================
+                 HISTORIAL
+            ============================================== -->
+
+           
+<section
+    id="seccion-historial"
+    class="seccion"
+>
+    <div class="section-header">
+        <div>
+            <p class="section-small">AUDITORÍA</p>
+            <h1>Historial</h1>
+            <p class="section-description">
+                Registro de movimientos del inventario
+            </p>
+        </div>
+    </div>
+
+    <!-- FILTROS DEL HISTORIAL -->
+    <div class="historial-filtros">
+        <div class="historial-filtro-busqueda">
+            <label for="historial-buscar">
+                Buscar producto o usuario
+            </label>
+            <input
+                type="search"
+                id="historial-buscar"
+                placeholder="Nombre del producto o usuario..."
+            >
+        </div>
+
+        <div class="historial-filtro-fecha">
+            <div>
+                <label for="historial-desde">
+                    Fecha desde
+                </label>
+                <input
+                    type="date"
+                    id="historial-desde"
+                >
+            </div>
+
+            <div>
+                <label for="historial-hasta">
+                    Fecha hasta
+                </label>
+                <input
+                    type="date"
+                    id="historial-hasta"
+                >
+            </div>
+        </div>
+
+        <div class="historial-filtro-tipo">
+            <label for="historial-tipo">
+                Tipo de inventario
+            </label>
+            <select id="historial-tipo">
+                <option value="TODOS">
+                    Todos los productos
+                </option>
+                <option value="PRODUCTO">
+                    Productos normales
+                </option>
+                <option value="AGRUPABLE">
+                    Productos agrupables
+                </option>
+            </select>
+        </div>
+
+        <button
+            type="button"
+            class="btn-secondary"
+            id="historial-limpiar-filtros"
+        >
+            Limpiar filtros
+        </button>
+    </div>
+
+    <div
+        id="historial-resumen"
+        class="historial-resumen"
+    ></div>
+
+    <div
+        id="lista-historial"
+        class="historial-list"
+    >
+        <div class="historial-vacio">
+            Cargando historial...
+        </div>
+    </div>
+</section>
+
+
+
+            <!-- =============================================
+                 CONFIGURACIÓN
+            ============================================== -->
+
+            <section
+                id="seccion-configuracion"
+                class="seccion"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <p class="section-small">
+                            SISTEMA
+                        </p>
+
+                        <h1>
+                            Configuración
+                        </h1>
+
+                        <p class="section-description">
+                            Configuración de InventarioApp
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <h2>
+                        Apariencia
+                    </h2>
+
+                    <p>
+                        Configuración visual de la aplicación
+                    </p>
+
+
+                    <div class="theme-options">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="tema"
+                                value="claro"
+                                checked
+                            >
+                            Claro
+                        </label>
+
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="tema"
+                                value="oscuro"
+                            >
+                            Oscuro
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <h2>
+                        Sesión
+                    </h2>
+
+                    <p>
+                        Usuario actualmente conectado
+                    </p>
+
+                    <strong id="config-email">
+                        admin@inventario.com
+                    </strong>
+
+                </div>
+
+
+                <div class="settings-card danger-card">
+
+                    <h2>
+                        Zona de sesión
+                    </h2>
+
+                    <button
+                        class="danger-button"
+                        id="btn-cerrar-sesion-config"
+                    >
+                        Cerrar sesión
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             NAVEGACIÓN MÓVIL
+        ================================================== -->
+
+        <nav class="bottom-nav">
+
+
+            <button
+                class="bottom-nav-item activo"
+                data-seccion="inicio"
+            >
+
+                <span>
+                    ⌂
+                </span>
+
+                <small>
+                    Inicio
+                </small>
+
+            </button>
+
+
+            <button
+                class="bottom-nav-item"
+                data-seccion="inventario"
+            >
+
+                <span>
+                    ▣
+                </span>
+
+                <small>
+                    Inventario
+                </small>
+
+            </button>
+
+
+            <button
+                class="bottom-nav-item"
+                data-seccion="categorias"
+            >
+
+                <span>
+                    ▤
+                </span>
+
+                <small>
+                    Categorías
+                </small>
+
+            </button>
+
+
+            <button
+                class="bottom-nav-item"
+                data-seccion="configuracion"
+            >
+
+                <span>
+                    ⚙
+                </span>
+
+                <small>
+                    Config.
+                </small>
+
+            </button>
+
+
+        </nav>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         MODAL PRODUCTO
+    ====================================================== -->
+
+    <div
+        class="modal-overlay oculto"
+        id="modal-producto"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <p class="section-small">
+                        INVENTARIO
+                    </p>
+
+                    <h2 id="modal-producto-titulo">
+                        Agregar producto
+                    </h2>
+
+                </div>
+
+
+                <button
+                    class="modal-close"
+                    id="cerrar-modal-producto"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="form-producto">
+
+
+                <input
+                    type="hidden"
+                    id="producto-id"
+                >
+
+
+                <div class="form-grid">
+
+
+                    <div class="form-group">
+
+                        <label for="producto-nombre">
+                            Nombre *
+                        </label>
+
+                        <input
+                            id="producto-nombre"
+                            type="text"
+                            required
+                            placeholder="Ej. Laptop"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="producto-marca">
+                            Marca
+                        </label>
+
+                        <input
+                            id="producto-marca"
+                            type="text"
+                            placeholder="Ej. Dell"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="producto-modelo">
+                            Modelo
+                        </label>
+
+                        <input
+                            id="producto-modelo"
+                            type="text"
+                            placeholder="Ej. Latitude 5420"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="producto-serial">
+                            Serial
+                        </label>
+
+                        <input
+                            id="producto-serial"
+                            type="text"
+                            placeholder="Número de serie"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="producto-codigo">
+                            Código interno *
+                        </label>
+
+                        <input
+                            id="producto-codigo"
+                            type="text"
+                            required
+                            placeholder="Ej. INV-001"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="producto-categoria">
+                            Categoría *
+                        </label>
+
+                        <select
+                            id="producto-categoria"
+                            required
+                        ></select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="producto-ubicacion">
+                            Ubicación
+                        </label>
+
+                        <input
+                            id="producto-ubicacion"
+                            type="text"
+                            placeholder="Ej. Bodega principal"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="producto-estado">
+                            Estado *
+                        </label>
+
+                        <select
+                            id="producto-estado"
+                            required
+                        >
+
+                            <option value="Disponible">
+                                Disponible
+                            </option>
+
+                            <option value="En uso">
+                                En uso
+                            </option>
+
+                            <option value="Mantenimiento">
+                                Mantenimiento
+                            </option>
+
+                            <option value="Dado de baja">
+                                Dado de baja
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="producto-descripcion">
+                        Descripción
+                    </label>
+
+                    <textarea
+                        id="producto-descripcion"
+                        rows="4"
+                        placeholder="Descripción del producto"
+                    ></textarea>
+
+                </div>
+
+
+                <div class="modal-buttons">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="cancelar-producto"
+                    >
+                        Cancelar
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Guardar producto
+                    </button>
+
+                </div>
+
+
+            </form>
+
+        </div>
+
+    </div>
+<!-- =====================================================
+     MODAL USUARIO
+====================================================== -->
+
+<div
+    class="modal-overlay oculto"
+    id="modal-usuario"
+>
+
+    <div class="modal modal-small">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="section-small">
+                    ADMINISTRACIÓN
+                </p>
+
+                <h2 id="modal-usuario-titulo">
+                    Nuevo usuario
+                </h2>
+
+            </div>
+
+            <button
+                class="modal-close"
+                id="cerrar-modal-usuario"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="form-usuario">
+
+            <input
+                type="hidden"
+                id="usuario-id"
+            >
+
+
+            <div class="form-group">
+
+                <label for="usuario-nombre">
+                    Nombre
+                </label>
+
+                <input
+                    id="usuario-nombre"
+                    type="text"
+                    required
+                    placeholder="Nombre completo"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="usuario-correo">
+                    Correo
+                </label>
+
+                <input
+                    id="usuario-correo"
+                    type="email"
+                    required
+                    placeholder="correo@empresa.com"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="usuario-password">
+                    Contraseña
+                </label>
+
+                <input
+                    id="usuario-password"
+                    type="password"
+                    placeholder="Contraseña"
+                >
+
+                <small>
+                    En edición, déjalo vacío para conservar
+                    la contraseña actual.
+                </small>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="usuario-rol">
+                    Rol
+                </label>
+
+                <select
+                    id="usuario-rol"
+                    required
+                >
+
+                    <option value="USUARIO">
+                        Usuario
+                    </option>
+
+                    <option value="ADMIN">
+                        Administrador
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="cancelar-usuario"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Guardar usuario
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+<!-- =====================================================
+     MODAL PERMISOS
+====================================================== -->
+
+<div
+    class="modal-overlay oculto"
+    id="modal-permisos"
+>
+
+    <div class="modal">
+
+        <div class="modal-header">
+
+            <div>
+
+                <p class="section-small">
+                    ADMINISTRACIÓN
+                </p>
+
+                <h2>
+                    Permisos del usuario
+                </h2>
+
+                <p
+                    id="permisos-usuario-nombre"
+                    class="section-description"
+                ></p>
+
+            </div>
+
+            <button
+                class="modal-close"
+                id="cerrar-modal-permisos"
+                type="button"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div
+            id="lista-permisos"
+            class="permissions-list"
+        >
+        </div>
+
+
+        <div class="modal-buttons">
+
+            <button
+                type="button"
+                class="secondary-button"
+                id="cancelar-permisos"
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="button"
+                class="primary-button"
+                id="guardar-permisos"
+            >
+                Guardar permisos
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- =====================================================
+         MODAL CATEGORÍA
+    ====================================================== -->
+
+    <div
+        class="modal-overlay oculto"
+        id="modal-categoria"
+    >
+
+        <div class="modal modal-small">
+
+            <div class="modal-header">
+
+                <h2>
+                    Nueva categoría
+                </h2>
+
+                <button
+                    class="modal-close"
+                    id="cerrar-modal-categoria"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <form id="form-categoria">
+
+                <div class="form-group">
+
+                    <label for="nombre-categoria">
+                        Nombre
+                    </label>
+
+                    <input
+                        id="nombre-categoria"
+                        type="text"
+                        required
+                        placeholder="Ej. Computadores"
+                    >
+
+                </div>
+
+
+                <div class="modal-buttons">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        id="cancelar-categoria"
+                    >
+                        Cancelar
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Crear categoría
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MODAL DETALLE PRODUCTO
+    ====================================================== -->
+
+    <div
+        class="modal-overlay oculto"
+        id="modal-detalle"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <h2>
+                    Detalle del producto
+                </h2>
+
+                <button
+                    class="modal-close"
+                    id="cerrar-modal-detalle"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                id="detalle-producto"
+                class="product-detail"
+            ></div>
+
+
+            <div class="modal-buttons">
+
+                <button
+                    class="secondary-button"
+                    id="cerrar-detalle"
+                >
+                    Cerrar
+                </button>
+
+
+                <button
+                    class="primary-button"
+                    id="editar-desde-detalle"
+                >
+                    Editar
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         TOAST
+    ====================================================== -->
+
+    <div
+        id="toast"
+        class="toast"
+    ></div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="appin.js"></script>
+
+
+</body>
+
+</html>
